@@ -1,9 +1,5 @@
 <p>view-questions works!</p>
 
 <p-fieldset *ngFor="let question of questions" [legend]="question.question" [toggleable]="true" [collapsed]="question.isCollapsed">
-    <!-- <p-editor [ngModel]="question.answer" [style]="{ height: '320px' }"></p-editor> -->
+    <p>{{question.answer}}</p>
 </p-fieldset>
-
-<div class="card">
-<p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
-</div>

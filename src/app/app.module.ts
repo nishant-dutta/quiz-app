@@ -11,12 +11,15 @@ import { EditorModule } from 'primeng/editor';
 import { AppComponent } from './app.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ViewQuestionsComponent } from './view-questions/view-questions.component';
+import { LoginComponent } from './login/login.component';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateQuestionsComponent,
-    ViewQuestionsComponent
+    ViewQuestionsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +28,7 @@ import { ViewQuestionsComponent } from './view-questions/view-questions.componen
     BrowserAnimationsModule,
     ButtonModule,
     FieldsetModule,
-    EditorModule,
-    
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
