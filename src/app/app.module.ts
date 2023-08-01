@@ -28,7 +28,8 @@ import { DividerModule } from 'primeng/divider';
     BrowserAnimationsModule,
     ButtonModule,
     FieldsetModule,
-    DividerModule
+    DividerModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ViewQuestionsComponent {
   questions: Question[] = [];
-  text: string | undefined;
+  text: string | undefined = "Hello";
 
 
   ngOnInit(){
