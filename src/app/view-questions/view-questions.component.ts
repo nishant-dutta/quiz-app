@@ -11,10 +11,10 @@ export class ViewQuestionsComponent {
 
 
   ngOnInit(){
-    let question1 = new Question(1, "What is Java?", "Java is a programming language which is platform independent", ["java"]);
-    let question2 = new Question(2, "Do you think ‘main’ used for main method is a keyword in Java?", `No, main is just a name of method. 
+    let question1 = new Question("What is Java?", "Java is a programming language which is platform independent", ["java"]);
+    let question2 = new Question("Do you think ‘main’ used for main method is a keyword in Java?", `No, main is just a name of method. 
                                       There can be multiple methods with same name main in a class file. It is not a keyword in Java.`, ["java"]);
-    let question3 = new Question(3, "How does ClassLoader work in Java?", `In Java, ClassLoader is a class that is used to load files in JVM. ClassLoader loads files from their physical file locations e.g. Filesystem, Network location etc.
+    let question3 = new Question("How does ClassLoader work in Java?", `In Java, ClassLoader is a class that is used to load files in JVM. ClassLoader loads files from their physical file locations e.g. Filesystem, Network location etc.
 
     There are three main types of ClassLoaders in Java.
     
@@ -28,16 +28,12 @@ export class ViewQuestionsComponent {
 }
 
 /* ************************** */
-class Question{
-  questionId: number;
+export class Question{
   question: string;
   answer: string;
   topics: string[];
-  isCollapsed: boolean = true;
-  isBookmarked: boolean = false;
 
-  constructor(questionId: number, question: string, answer: string, topics: string[]){
-    this.questionId = questionId;
+  constructor(question: string, answer: string, topics: string[]){
     this.question = question;
     this.answer = answer;
     this.topics = topics;

@@ -1,1 +1,48 @@
-<p>create-questions works!</p>
+<div style="border: 1px solid black; height: 90vh;width: 50%;margin: auto;overflow-y: scroll;">
+    <h2 style="text-align: center;">Add Questions</h2>
+    <hr>
+    
+    <div *ngFor="let question of questions;index as index" class="p-fluid" style="padding: 1rem;">
+        <div class="field">
+            <label style="color: blue;" for="username">Question: {{index + 1}}</label>
+            <span style="float: right;padding-bottom: 0.25rem;">
+                <span style="padding: 0.5rem;">
+                    <p-button icon="pi pi-heart" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+                </span>
+                <span style="padding: 0.5rem;">
+                    <p-button icon="pi pi-times" (onClick)="deleteQuestion(index)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+                </span>
+            </span>
+
+            <textarea class="p-inputtext p-component p-element" rows="2" cols="30" pInputTextarea
+                [(ngModel)]="question.question"></textarea>
+        </div>
+        <div class="field">
+            <label style="color: green;" for="answer">Answer</label>
+
+            <textarea class="p-inputtext p-component p-element" rows="4" cols="30" pInputTextarea
+                [(ngModel)]="question.answer"></textarea>
+        </div>
+
+        <div class="field">
+            <label style="color: green;" for="answer">Topics</label>
+
+            <p-chips [(ngModel)]="question.topics"></p-chips>
+        </div>
+
+        <hr>
+    </div>
+
+
+    <div style="float: right; padding: 1rem;">
+        <span style="padding: 1rem;">
+            <p-button (onClick)="addNewQuestion()" label="Add New Question"></p-button>
+        </span>
+
+        <span style="padding: 1rem;">
+            <p-button label="Save" (onClick)="saveQuestions()" styleClass="p-button-success "></p-button>
+        </span>
+
+
+    </div>
+</div>

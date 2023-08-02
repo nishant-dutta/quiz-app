@@ -7,12 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { FieldsetModule } from 'primeng/fieldset';
 import { EditorModule } from 'primeng/editor';
+import { CardModule } from 'primeng/card';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 import { AppComponent } from './app.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ViewQuestionsComponent } from './view-questions/view-questions.component';
 import { LoginComponent } from './login/login.component';
 import { DividerModule } from 'primeng/divider';
+import { ChipsModule } from 'primeng/chips';
+import { MenubarModule } from 'primeng/menubar';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { DividerModule } from 'primeng/divider';
     ButtonModule,
     FieldsetModule,
     DividerModule,
-    EditorModule
+    EditorModule,
+    CardModule,
+    InputTextareaModule,
+    ChipsModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
