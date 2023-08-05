@@ -17,6 +17,9 @@ import { LoginComponent } from './login/login.component';
 import { DividerModule } from 'primeng/divider';
 import { ChipsModule } from 'primeng/chips';
 import { MenubarModule } from 'primeng/menubar';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from 'src/auth/auth.service';
+
 
 
 @NgModule({
@@ -38,9 +41,10 @@ import { MenubarModule } from 'primeng/menubar';
     CardModule,
     InputTextareaModule,
     ChipsModule,
-    MenubarModule
+    MenubarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
