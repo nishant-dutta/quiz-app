@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
+import { Router, RouterStateSnapshot } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { AuthService } from 'src/auth/auth.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'quiz-app';
-  items: MenuItem[] | undefined;
+    constructor(private router: Router, private authService: AuthService){}
 
-  exportQuestions(){
-    alert('Feature in progress!');
-  }
+    title = 'quiz-app';
+    items: MenuItem[] | undefined;
+
+    exportQuestions() {
+        alert('Feature in progress!');
+    }
 
     ngOnInit() {
         this.items = [
@@ -131,5 +135,27 @@ export class AppComponent {
                 icon: 'pi pi-fw pi-power-off'
             }
         ];
+    }
+
+    navigateToHomepage() {
+        this.router.navigateByUrl("/");
+    }
+
+    navigateToLogin(){
+        this.router.navigateByUrl("/login");
+    }
+
+    isUserLoggedIn(){
+        return this.authService.decodedResponse != null;
+    }
+
+    logout(){
+        this.authService.decodedResponse = null;
+        this.navigateToHomepage();
+    }
+
+    isOnCredentialsPage(){
+        console.log(this.router.url)
+        return this.router.url === "/login";
     }
 }

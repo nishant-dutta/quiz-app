@@ -17,10 +17,11 @@ import { LoginComponent } from './login/login.component';
 import { DividerModule } from 'primeng/divider';
 import { ChipsModule } from 'primeng/chips';
 import { MenubarModule } from 'primeng/menubar';
+import { ToastModule } from 'primeng/toast';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from 'src/auth/auth.service';
-
-
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,10 @@ import { AuthService } from 'src/auth/auth.service';
     InputTextareaModule,
     ChipsModule,
     MenubarModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
