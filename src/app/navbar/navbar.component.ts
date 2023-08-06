@@ -137,7 +137,7 @@ export class NavbarComponent {
     }
 
     navigateToHomepage() {
-        this.router.navigateByUrl("/");
+        this.router.navigateByUrl("/view-questions");
     }
 
     navigateToLogin(){
@@ -156,7 +156,6 @@ export class NavbarComponent {
     }
 
     isOnCredentialsPage(){
-        console.log(this.router.url)
         return this.router.url === "/login";
     }
 }
