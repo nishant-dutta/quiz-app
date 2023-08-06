@@ -1,23 +1,5 @@
-<!-- <h1>Quiz Master</h1> -->
-<div class="card" style="padding-bottom: 1rem;">
-    <p-menubar [model]="items">
-        <ng-template pTemplate="start">
-            <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" (click)="navigateToHomepage()" height="40"
-                class="mr-2" style="cursor: pointer;" />
-        </ng-template>
-        <ng-template pTemplate="end">
-            <div *ngIf="!isOnCredentialsPage()">
-                <p-button label="Logout" *ngIf="isUserLoggedIn();else login;" (onClick)="logout()"
-                    styleClass="p-button-danger"></p-button>
-                <ng-template #login>
-                    <p-button label="Login" #login (onClick)="navigateToLogin()"
-                        styleClass="p-button-success"></p-button>
-                </ng-template>
-            </div>
+<app-navbar></app-navbar>
 
-        </ng-template>
-    </p-menubar>
-</div>
 <router-outlet></router-outlet>
 
 <!-- Should be placed in app component so that it can be displayed from any component and also survives router navigation -->

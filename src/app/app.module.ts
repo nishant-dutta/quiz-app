@@ -22,13 +22,15 @@ import { ToastModule } from 'primeng/toast';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from 'src/auth/auth.service';
 import { MessageService } from 'primeng/api';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateQuestionsComponent,
     ViewQuestionsComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
