@@ -12,7 +12,7 @@ import { User } from 'src/auth/user';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService, private messageService: MessageService, private jwtService: JwtService, private router: Router){
+  constructor(private authService: AuthService, private messageService: MessageService, private jwtService: JwtService, private router: Router) {
     // this.user = new User();
   }
 
@@ -20,10 +20,10 @@ export class LoginComponent {
   username: string = "";
   password: string = "";
 
-  authenticateUser(){
+  authenticateUser() {
     this.authService.loginIn(this.username, this.password).subscribe(
       (response: any) => {
-        // Emitting new user
+        // Emitting new user for its consumers
         let loggedInUser = new User();
         loggedInUser.initializeValuesFromAuthResponse(response);
         this.authService.userSubject.next(loggedInUser);
@@ -44,7 +44,7 @@ export class LoginComponent {
     this.setUiFieldsToDefault();
   }
 
-  setUiFieldsToDefault(){
+  setUiFieldsToDefault() {
     this.password = "";
     this.username = "";
   }

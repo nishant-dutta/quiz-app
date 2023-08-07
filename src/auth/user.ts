@@ -1,4 +1,4 @@
-interface AuthResponse{
+interface AuthResponse {
     access_token: string,
     expires_in: number,
     refresh_token: string,
@@ -8,14 +8,14 @@ interface AuthResponse{
 export class User {
 
     accessToken!: string;
-    expiresOn!: Date;
+    expiresOn!: number;
     refreshToken!: string;
-    refreshExpiresOn!: Date;
+    refreshExpiresOn!: number;
 
-    initializeValuesFromAuthResponse(authResponse: AuthResponse){
+    initializeValuesFromAuthResponse(authResponse: AuthResponse) {
         this.accessToken = authResponse.access_token;
-        this.expiresOn = new Date(new Date().getTime() + authResponse.expires_in);
+        this.expiresOn = Date.now() + (authResponse.expires_in * 1000);
         this.refreshToken = authResponse.refresh_token;
-        this.refreshExpiresOn = new Date(new Date().getTime() + authResponse.refresh_expires_in);
+        this.refreshExpiresOn = Date.now() + (authResponse.refresh_expires_in * 1000);
     }
 }
