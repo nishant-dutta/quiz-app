@@ -19,9 +19,9 @@ export class LoginComponent {
   authenticateUser(){
     this.authService.loginIn(this.username, this.password).subscribe(
       (response: any) => {
-        this.authService.decodedResponse = this.jwtService.DecodeToken(response.access_token);
+        this.authService.decodedAuthResponse = this.jwtService.DecodeToken(response.access_token);
         this.router.navigateByUrl("/view-questions");
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Welcome back ' + this.authService.decodedResponse.given_name + "!" });
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Welcome back ' + this.authService.decodedAuthResponse.given_name + "!" });
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.error_description });

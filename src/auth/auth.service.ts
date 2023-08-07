@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  decodedResponse: any = null;
+  decodedAuthResponse: any = null;
 
   private authUrl: string = "http://localhost:5000/realms/QuizMasterRealm/protocol/openid-connect/token";
 
