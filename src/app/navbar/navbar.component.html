@@ -6,7 +6,7 @@
         </ng-template>
         <ng-template pTemplate="end">
             <div *ngIf="!isOnCredentialsPage()">
-                <p-button label="Logout" *ngIf="isUserLoggedIn();else login;" (onClick)="logout()"
+                <p-button label="Logout" *ngIf="isAuthenticated;else login;" (onClick)="logout()"
                     styleClass="p-button-danger"></p-button>
                 <ng-template #login>
                     <p-button label="Login" #login (onClick)="navigateToLogin()"

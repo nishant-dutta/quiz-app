@@ -66,6 +66,10 @@ export class NavbarComponent {
                 ]
             }
         ];
+
+        this.authService.userSubject.subscribe((user) => {
+            this.isAuthenticated = (user != null);
+        })
     }
 
     navigateToHomepage() {
@@ -76,14 +80,14 @@ export class NavbarComponent {
         this.router.navigateByUrl("/login");
     }
 
-    isUserLoggedIn(){
-        return this.authService.decodedAuthResponse != null;
-    }
+    isAuthenticated: boolean = false;
 
     logout(){
-        this.authService.decodedAuthResponse = null;
+        this.authService.logout();
+
         // todo: Add API call for logout
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Logout Successful!' });
+        
         this.navigateToHomepage();
     }
 
